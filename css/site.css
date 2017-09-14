@@ -1,0 +1,71 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.team-member-container {
+  margin-bottom: 16px;
+  padding: 0 8px;
+  text-align: center;
+  height: 100%;
+}
+
+.team-row-container{
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .team-member-container  {
+    /*width: 100%;*/
+    display: block;
+  }
+}
+
+.team-member {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px 10px 10px 10px;
+  width: 250px;
+  text-align: center;
+  height: 100%;
+}
+
+.team-member-bio {
+
+}
+
+.member-photo{
+  width: 200px;
+}
+
+.team-member-bio::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+  font-style: italic;
+}
+
+.contact-btn {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  background-color: #555;
+}
+
+.row {
+    text-align: center;
+}
