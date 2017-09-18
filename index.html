@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>microElastic Ultrasound Systems, Inc.</title>
+    <title>MicroElastic Ultrasound Systems, Inc.</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,10 +29,11 @@
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet" />
   </head>
 <!-- NAVBAR
 ================================================== -->
-  <body>
+  <body ng-app="microElasticApp" ng-controller="microElasticCtrl">
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -45,25 +46,22 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#"><span><img width="21" height="30" src="images/muE_white.png" alt="microelasticlogo"/> microElastic</span></a>
+              <a class="navbar-brand" href="#"><span><img width="21" height="30" src="images/muE_white.png" alt="microelasticlogo"/> MicroElastic</span></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <!--<li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>-->
+                <li ng-class="{'active': activeTab == 'home'}">
+                  <a href="" ng-click="changeTab('home')">Home</a>
+                </li>
+<!--                 <li ng-class="{'active': activeTab == 'about'}">
+                  <a href="" ng-click="changeTab('about')">About</a>
+                </li> -->
+                <li ng-class="{'active': activeTab == 'contact'}">
+                  <a href="" ng-click="changeTab('contact')">Contact</a>
+                </li>
+                <li ng-class="{'active': activeTab == 'team'}">
+                  <a href="" ng-click="changeTab('team')">Our Team</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -83,17 +81,8 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
+
         <div class="item active">
-          <img class="first-slide" src="images/frenchfries.png" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>1 in 3 Americans has NAFLD.</h1>
-              <p>1 in 20 patients with Nonacoholic Fatty Liver Disease (NAFLD) will progress to Liver Cirhossis, the 8th leading cause of death in the U.S. for adults 18-65.</p>
-<!--               <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn More</a></p> -->
-            </div>
-          </div>
-        </div>
-        <div class="item">
           <img class="second-slide" src="images/wrinkles.png" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
@@ -110,6 +99,16 @@
               <h1>Chronic GVHD affects up to 70% of stem cell recepients</h1>
               <p>&ldquo;There is an urgent need for the development of more quantifiable and reproducible measurements...in patients with sclerotic skin manifestations of chronic GVHD (Graft-Versus-Host Disease)&rdquo; - NIH Chronic GVHD Working Group</p>
               <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Learn More</a></p>-->
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="first-slide" src="images/frenchfries.png" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>1 in 3 Americans has NAFLD.</h1>
+              <p>1 in 20 patients with Nonacoholic Fatty Liver Disease (NAFLD) will progress to Liver Cirhossis, the 8th leading cause of death in the U.S. for adults 18-65.</p>
+<!--               <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn More</a></p> -->
             </div>
           </div>
         </div>
@@ -131,71 +130,193 @@
 
     <div class="container marketing">
 
-<!--       <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div> -->
+      <div class="tab-content">
+        <!-- Each tab has a tab content section that is shown when its name is active -->
+        <div id="homeContent" ng-show="activeTab == 'home'">
+          <div class="row featurette">
+            <div class="col-md-9">
+              <h2 class="featurette-heading">Ultrasonic elasticity measurement<span class="text-muted"> at the point-of-care.</span></h2>
+              <p class="lead">MicroElastic is developing a specialized ultrasound platform for measuring tissue elasticity noninvasively.
+                The use of elasticity imaging to characterize tissue has been clinically validated, but commercial implementations
+                are limited to full-sized and full-priced ultrasound scanners. MicroElastic is developing dedicated devices
+                 for use by specialists and generalists to diagnose and track disease at the point-of-care, tailored to fit the needs
+                 of each application.</p>
+            </div>
+            <div class="col-md-3">
+              <img class="featurette-image img-responsive center-block" src= "images/product_concept.png" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            </div>
+          </div>
 
-
-      <!--<hr class="featurette-divider">-->
-
-      <div class="row featurette">
-        <div class="col-md-9">
-          <h2 class="featurette-heading">Ultrasonic elasticity measurement<span class="text-muted"> at the point-of-care.</span></h2>
-          <p class="lead">microElastic is developing a specialized ultrasound platform for measuring tissue elasticity noninvasively. 
-            The use of elasticity imaging to characterize tissue has been clinically validated, but commercial implementations 
-            are limited to full-sized and full-priced ultrasound scanners. microElastic is developing dedicated devices
-             for use by specialists and generalists to diagnose and track disease at the point-of-care, tailored to fit the needs 
-             of each application.</p>
+          <hr class="featurette-divider">
+          <hr class="featurette-divider">
         </div>
-        <div class="col-md-3">
-          <img class="featurette-image img-responsive center-block" src= "images/device_render_small.png" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        <!-- <div id="aboutContent" ng-show="activeTab == 'about'">
+          <div class="row featurette">
+            <div class="col-md-12">
+              <h2 class="featurette-heading"><span>MicroElastic Ultrasound Systems, Inc.</span></h2>
+              <p class="lead">MicroElastic is a startup in Durham, North Carolina. The company was founded in 2016 by Peter Hollender, Ph.D., a research scientist in Duke University's department of Biomedical Engineering, in consultation with and under the mentorship of seasoned and successful entrepreneurs and venture capitalists from Duke, the Research Triangle, and beyond. </p>
+            </div>
+          </div>
+        </div> -->
+        <div id="contactContent" ng-show="activeTab == 'contact'">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="featurette-heading"><span>Contact</span></h2>
+              <p class="lead">For inquiries, please email <a href="mailto:info@microelastic.com">info@microelastic.com</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div id="teamContent" ng-show="activeTab == 'team'">
+          <div class="row">
+            <h1>Management Team</h1>
+            <div class="col-sm-4 team-member-container">
+              <div class="team-member center-block">
+                <img src="resources/pete_hollender.jpg" alt="" class="member-photo" />
+                <div class="team-member-bio">
+                  <h2>Peter Hollender, Ph.D.</h2>
+                  <p class="title">Founder, CEO</p>
+                  <p>Ultrasound expert, passionate innovator. Founded MicroElastic to bring doctors innovative solutions to detect diseases and track interventions with ultrasound.</p>
+                  <p>peter.hollender@microelastic.com</p>
+                  <p><button class="contact-btn">Contact</button></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 team-member-container">
+              <div class="team-member center-block">
+                <img src="resources/rich_mcgivney.jpg" alt="" class="member-photo" />
+                <div class="team-member-bio">
+                  <h2>Rich McGivney, CPA</h2>
+                  <p class="title">CFO</p>
+                  <p>Results-oriented financial executive with more than 30 years of public accounting, corporate finance, and leadership experience</p>
+                  <p><button class="contact-btn">Contact</button></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 team-member-container">
+              <div class="team-member center-block">
+                <img src="resources/aron_josefsberg.jpg" alt="" class="member-photo" />
+                <div class="team-member-bio">
+                  <h2>Aron Josefsberg, MBA</h2>
+                  <p class="title">Controller</p>
+                  <p>Controller and accountant for small businesses and publicly traded companies for over 15 years.</p>
+                  <p><button class="contact-btn">Contact</button></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <h1>Advisory Board</h1>
+            <div class="col-sm-4 team-member-container">
+              <div class="team-member center-block">
+                <img src="resources/william_walker.png" alt="" class="member-photo" />
+                <div class="team-member-bio">
+                  <h2>William F. Walker, Ph.D.</h2>
+                  <p class="title">Advisor</p>
+                  <p>Serial Entrepreneur and Ultrasound device commercialization expert. Founder of PocketSonics and HemoSonics. Director of Entrepreneurial Development for Pratt School of Engineering at Duke.</p>
+                  <p><button class="contact-btn">Contact</button></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 team-member-container">
+              <div class="team-member center-block">
+                <img src="resources/jesko_von_windheim.png" alt="" class="member-photo" />
+                <div class="team-member-bio">
+                  <h2>Jesko von Windheim, Ph.D., MBA</h2>
+                  <p class="title">Advisor</p>
+                  <p>Serial Entrepreneur and founder, Cronos Integrated Microsystems, Nexteme Thermal Solutions, Zenalux Biomedical.  Professor of the Practice of Environmental Entrepreneurship and Innovation at Duke.</p>
+                  <p><button class="contact-btn">Contact</button></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 team-member-container">
+              <div class="team-member center-block">
+                <img src="resources/mark_palmeri.jpg" alt="" class="member-photo" />
+                <div class="team-member-bio">
+                  <h2>Mark Palmeri, M.D., Ph.D.</h2>
+                  <p class="title">Scientific Advisor</p>
+                  <p>Prolific researcher, ARFI Co-Inventor with 4000+ Citations and 13 patents. Professor of the Practice at Duke.</p>
+                  <p><button class="contact-btn">Contact</button></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+          <h1>Clinical Advisors</h1>
+            <div class="col-sm-6 team-member-container">
+              <div class="team-member center-block">
+                <img src="resources/adela_cardones.jpg" alt="Adela Cardones" class="member-photo" />
+                <div class="team-member-bio">
+                  <h2>Adela Rambi Cardones, MD</h2>
+                  <p class="title">Dermatologist</p>
+                  <p>Leading GVHD Researcher</p>
+                  <p></p>
+                  <p><button class="contact-btn">Contact</button></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 team-member-container">
+              <div class="team-member center-block">
+                <img src="resources/manal_abdelmalek.jpg" alt="" class="member-photo" />
+                <div class="team-member-bio">
+                  <h2>Manal Abdelmalek, MD</h2>
+                  <p class="title">Hepatologist</p>
+                  <p>Leading NAFLD Researcher</p>
+                  <p>Proven Collaboration</p>
+                  <p><button class="contact-btn">Contact</button></p>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          <div class="row">
+          <h1>Engineering</h1>
+            <div class="col-sm-4 team-member-container">
+              <div class="team-member center-block">
+                <img src="resources/inje_lee.png" alt="" class="member-photo" />
+                <div class="team-member-bio">
+                  <h2>Inje Lee</h2>
+                  <p class="title">Mechanical Engineer</p>
+                  <p><button class="contact-btn">Contact</button></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 team-member-container">
+              <div class="team-member center-block">
+                <img src="resources/meredith_lee.png" alt="" class="member-photo" />
+                <div class="team-member-bio">
+                  <h2>Meredith Lee</h2>
+                  <p class="title">Mechanical Engineer</p>
+                  <p><button class="contact-btn">Contact</button></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 team-member-container">
+              <div class="team-member center-block">
+                <img src="resources/niranjana_shashikumar.png" alt="" class="member-photo" />
+                <div class="team-member-bio">
+                  <h2>Niranjana Shashikumar</h2>
+                  <p class="title">Test Engineer</p>
+                  <p><button class="contact-btn">Contact</button></p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-sm-3 team-member-container">
+              <div class="team-member center-block">
+                <img src="resources/john_castellucci.png" alt="" class="member-photo" />
+                <div class="team-member-bio">
+                  <h2>John Castellucci</h2>
+                  <p class="title">Electronics Consultant</p>
+                  <p><button class="contact-btn">Contact</button></p>
+                </div>
+              </div>
+            </div> -->
+          </div>
+
         </div>
       </div>
-
-      <hr class="featurette-divider">
-
-<!--       <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div> -->
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
 
 
       <!-- FOOTER -->
@@ -217,5 +338,13 @@
     <script src="assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <script type="text/ng-template" id="homeContent" src="html/home.html"></script>
+    <script type="text/ng-template" id="aboutContent" src="html/about.html"></script>
+    <script type="text/ng-template" id="contactContent" src="html/contact.html"></script>
+    <script type="text/ng-template" id="teamContent" src="html/team.html"></script>
   </body>
 </html>

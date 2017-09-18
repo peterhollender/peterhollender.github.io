@@ -37,7 +37,7 @@ html {
 }
 
 .member-photo{
-  width: 200px;
+  height: 200px;
 }
 
 .team-member-bio::after, .row::after {
@@ -57,7 +57,7 @@ html {
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #000;
+  background-color: #AAA;
   text-align: center;
   cursor: pointer;
 }
