@@ -69,3 +69,16 @@ html {
 .row {
     text-align: center;
 }
+
+td {
+    border: 1px solid black;
+	text-align: left;
+	vertical-align: text-top;
+	padding: 15px;
+}
+
+th{
+	text-align: left;
+	vertical-align: bottom;
+	padding: 15px;
+}

@@ -59,6 +59,9 @@
                 <li ng-class="{'active': activeTab == 'contact'}">
                   <a href="" ng-click="changeTab('contact')">Contact</a>
                 </li>
+				<li ng-class="{'active': activeTab == 'jobs'}">
+                  <a href="" ng-click="changeTab('jobs')">Opportunities</a>
+                </li>
                 <li ng-class="{'active': activeTab == 'team'}">
                   <a href="" ng-click="changeTab('team')">Our Team</a>
                 </li>
@@ -87,7 +90,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Skin loses elasticity as we age.</h1>
-              <p>Tracking skin elasticity allows us to monitor and guide treatments to take care of the largest organ in our body.</p>
+              <p>Tracking skin elasticity allows us to monitor and guide treatments to take better care of the largest organ in our body.</p>
 <!--               <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
             </div>
           </div>
@@ -134,7 +137,7 @@
         <!-- Each tab has a tab content section that is shown when its name is active -->
         <div id="homeContent" ng-show="activeTab == 'home'">
           <div class="row featurette">
-            <div class="col-md-9">
+            <div class="col-md-12">
               <h2 class="featurette-heading">Ultrasonic elasticity measurement<span class="text-muted"> at the point-of-care.</span></h2>
               <p class="lead">MicroElastic is developing a specialized ultrasound platform for measuring tissue elasticity noninvasively.
                 The use of elasticity imaging to characterize tissue has been clinically validated, but commercial implementations
@@ -142,8 +145,8 @@
                  for use by specialists and generalists to diagnose and track disease at the point-of-care, tailored to fit the needs
                  of each application.</p>
             </div>
-            <div class="col-md-3">
-              <img class="featurette-image img-responsive center-block" src= "images/Product_Concept.png" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            <div class="col-md-12">
+              <p><img class="featurette-image img-responsive center-block" src= "images/Product_Concept.png" data-src="holder.js/500x500/auto" alt="Generic placeholder image"></p>
             </div>
           </div>
 
@@ -163,6 +166,34 @@
             <div class="col-md-12">
               <h2 class="featurette-heading"><span>Contact</span></h2>
               <p class="lead">For inquiries, please email <a href="mailto:info@microelastic.com">info@microelastic.com</a></p>
+            </div>
+          </div>
+        </div>
+		<div id="jobsContent" ng-show="activeTab == 'jobs'">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="featurette-heading"><span>Opportunities</span></h2>
+              <p class="lead">MicroElastic is hiring! Please send resumes to jobs@microelastic.com and include the job ID in the subject line.</p>
+			  <table style="width:100%">
+			  <tr>
+				<th>Job ID</th>
+				<th>Position</th>
+				<th>Description</th> 
+				<th>Application Deadline</th>
+			  </tr>
+			  <tr>
+				<td>2017001</td>
+				<td> Mechanical Design Engineer </td>
+				<td>MicroElastic Ultrasound Systems is seeking an experienced mechanical designer to design and rapidly-prototype components and fixtures for a handheld ultrasound device. Engineer will be responsible for designing the device housing, working with clinicians on ergonomic considerations, and building and operating test fixtures. The ideal candidate has substantial 3D CAD experience (preferably Autodesk fusion 360), is very comfortable with rapid prototyping techniques, is organized, highly motivated, and able to work with a small team to deliver quality solutions. Experience with injection molding a plus, but not required. This is a six-month full-time position and an opportunity to impact the growth of a medical device startup at an early stage, with the possibility of becoming a longer-term position.</td> 
+				<td>2017-12-22 <a href="mailto:jobs@microelastic.com?Subject=MicroElastic%20Job%20Application%20for%20Job%20ID:2017001" target="_top">Apply</a></td>
+			  </tr>
+			  <tr>
+				<td>2017002</td>
+				<td> Python Engineer </td>
+				<td>MicroElastic Ultrasound Systems is seeking an experienced software engineer to write processing and control Python code for a handheld ultrasound device. Engineer will be responsible for adapting an existing code-base to a second-generation device, designing a graphical user interface, and benchmarking device performance. The ideal candidate has substantial Python programming experience, is organized, highly motivated, and able to work with a small team to deliver quality solutions. FPGA programming experience (VHDL or Verilog) is not required, but is also a plus. This is a six-month full-time position and an opportunity to impact the growth of a medical device startup at an early stage, with the possibility of becoming a longer-term position.</td> 
+				<td>2017-12-22 <a href="mailto:jobs@microelastic.com?Subject=MicroElastic%20Job%20Application%20for%20Job%20ID:2017002" target="_top">Apply</a></td>
+			  </tr>
+			</table>
             </div>
           </div>
         </div>
@@ -322,7 +353,7 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 microElastic Ultrasound Systems, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2016 MicroElastic Ultrasound Systems, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
     </div><!-- /.container -->
